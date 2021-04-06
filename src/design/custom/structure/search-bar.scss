@@ -1,0 +1,84 @@
+//
+// right-sidebar.scss
+//
+
+.search-bar {
+    background-color: $card-bg;
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0 0 rgba(0, 0, 0, 0.02);
+    display: block;
+    position: fixed;
+    transition: all 200ms ease-out;
+    width: $rightbar-width;
+    z-index: 9999;
+    float: right !important;
+    left: -350px;
+    top: 0;
+    bottom: 0;
+
+    .app-search .form-control {
+      font-size: 20px;
+      color: #e9ecef;
+      height: 44px;
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+    .app-search span {
+      font-size: 20px;
+      color: #9ca8b3;
+      line-height: 40px;
+    }
+    .app-search .form-control::placeholder {
+      color: #9ca8b3;
+      opacity: 0.8;
+    }
+
+    .title {
+      font-weight: 500;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+        cursor: pointer;
+      }
+      li:hover {
+        background: #3a425a;
+      }
+    }
+}
+
+// searchbar overlay
+.searchbar-overlay {
+    background-color: #181c26c9;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+    z-index: 9998;
+    transition: all .2s ease-out;
+}
+
+.search-bar-enabled {
+    .search-bar {
+        left: 70px;
+    }
+    .searchbar-overlay {
+        display: block;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .search-bar {
+        overflow: auto;
+        .slimscroll-menu {
+            height: auto !important;
+        }
+    }
+}

@@ -74,7 +74,10 @@ export default {
       document.body.setAttribute("data-layout-size", "boxed");
       document.body.classList.add("vertical-collpsed");
       document.body.setAttribute("data-keep-enlarged", "true");
-    }
+    },
+    toggleSearchbar() {
+      this.$parent.toggleSearchbar();
+    },
   }
 };
 </script>
@@ -86,13 +89,20 @@ export default {
       <!--- Sidemenu -->
       <div id="sidebar-menu">
         <!-- Left Menu Start -->
-        <ul class="metismenu list-unstyled" id="side-menu">
+        <ul class="list-unstyled" id="side-menu">
 
           <li>
             <router-link tag="a" to="/overview" class="side-nav-link">
               <i class="ti-receipt"></i>
               <span>Overview</span>
             </router-link>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);" class="toggle-search" @click="toggleSearchbar">
+              <i class="ti-search"></i>
+              <span>Search</span>
+            </a>
           </li>
 
           <li>

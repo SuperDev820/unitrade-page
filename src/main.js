@@ -7,7 +7,7 @@ import * as VueGoogleMaps from 'vue2-google-maps'
 import VueSweetalert2 from 'vue-sweetalert2'
 import VueApexCharts from 'vue-apexcharts'
 import router from './router/index'
-import store from '@/state/store'
+import store from './store'
 import vco from "v-click-outside"
 import "@/design/index.scss";
 import Sparkline from 'vue-sparklines';
