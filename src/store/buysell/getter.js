@@ -5,6 +5,9 @@ const getters = {
     currentPair(state) {
         return state.current_pair
     },
+    tokenItems(state) {
+        return state.token_items
+    },
 };
 
 export default getters;

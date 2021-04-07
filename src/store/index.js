@@ -1,15 +1,17 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-// import authModule from './auth';
 import layoutModule from './layout';
 import buysellModule from './buysell';
+import searchbarModule from './searchbar';
+import overviewModule from './overview';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   modules: {
-    // auth: authModule,
     layout: layoutModule,
     buysell: buysellModule,
+    searchbar: searchbarModule,
+    overview: overviewModule,
   },
 });

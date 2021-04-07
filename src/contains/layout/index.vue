@@ -2,10 +2,12 @@
 import router from "@/router";
 
 import Sidebar from "./sidebar";
+import Searchbar from "./search-bar";
 
 export default {
   components: {
     Sidebar,
+    Searchbar,
   },
   created() {
     document.body.setAttribute("data-sidebar", "dark");
@@ -26,12 +28,12 @@ export default {
         });
       }
     },
-    toggleRightSidebar() {
-      document.body.classList.toggle("right-bar-enabled");
+    toggleSearchbar() {
+      document.body.classList.toggle("search-bar-enabled");
     },
-    hideRightSidebar() {
-      document.body.classList.remove("right-bar-enabled");
-    }
+    hideSearchbar() {
+      document.body.classList.remove("search-bar-enabled");
+    },
   }
 };
 </script>
@@ -39,6 +41,7 @@ export default {
 <template>
   <div id="layout-wrapper">
     <Sidebar />
+    <Searchbar />
     <div class="main-content">
       <div class="page-content">
         <div class="container-fluid">
@@ -48,3 +51,8 @@ export default {
     </div>
   </div>
 </template>
+<style scoped>
+  .main-content {
+    margin-right: 0;
+  }
+</style>

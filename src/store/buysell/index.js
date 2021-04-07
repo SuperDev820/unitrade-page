@@ -13,6 +13,13 @@ const defaultState = {
     description: 'xml.network',
     liquidity: 0,
   },
+  token_items: [
+    {
+      'name': 'ETH',
+      'description': 'Ethereum',
+      'liquidity': 30502411.56,
+    },
+  ],
 };
 
 export default {

@@ -1,6 +1,8 @@
 <script>
 	import Layout from "../layout/main_layout";
   import appConfig from "@/app.config";
+  import Loading from 'vue-loading-overlay';
+  import 'vue-loading-overlay/dist/vue-loading.css';
 
   import { mapActions, mapGetters } from 'vuex';
 
@@ -11,10 +13,11 @@
     },
     components: {
       Layout,
+      Loading,
     },
     data() {
       return {
-        title: "",
+        isLoading: false,
         tabIndex: 1,
         walletItems: [
           {
@@ -43,13 +46,6 @@
           },
         ],
         wallet_address: "d7f8d7f8sd7f8sd7f8sd78f78asdf",
-        tokenItems: [
-          {
-            'name': 'ETH',
-            'description': 'Ethereum',
-            'liquidity': 30502411.56,
-          },
-        ],
         token_filter_by: '',
         filtered_tokenItems: [],
         isActiveLimit: true,
@@ -69,6 +65,7 @@
       ...mapGetters([
         'currentToken',
         'currentPair',
+        'tokenItems',
       ]),
     },
     mounted() {
@@ -112,6 +109,10 @@
           this.setPair(tokenItem);
         }
         this.$bvModal.hide('token-modal');
+        this.isLoading = true;
+        setTimeout(() => {
+          this.isLoading = false
+        },2000)
       },
       usdPair() {
         if (this.isUSDPair) {
@@ -130,6 +131,10 @@
         } else if (this.tabIndex == 0) {
           this.setPair(pairItem);
         }
+        this.isLoading = true;
+        setTimeout(() => {
+          this.isLoading = false
+        },2000)
       },
       selectWallet(walletItem) {
         this.current_wallet = walletItem.wallet;
@@ -148,6 +153,13 @@
 </script>
 <template>
   <Layout>
+    <loading :active.sync="isLoading" 
+      :is-full-page="false"
+      :background-color="'#222736'"
+      :color="'#38a4f8'"
+      :opacity="1"
+      :z-index="9997"
+    ></loading>
     <div style="display: flex;flex-direction: column;justify-content: space-between;">
       <div class="ml-2">
         <div class="header-title mb-3">
@@ -401,7 +413,7 @@
     >
       <div class="app-search">
         <div class="position-relative">
-          <input v-model="token_filter_by" type="text" @change="tokenFilterHandler" class="form-control" placeholder="Search pairs..." />
+          <input v-model="token_filter_by" type="text" v-on:keyup="tokenFilterHandler" class="form-control" placeholder="Search pairs..." />
           <span class="ti-search"></span>
         </div>
       </div>
@@ -457,6 +469,12 @@
   </Layout>
 </template>
 <style>
+  .main-content {
+    position: relative;
+  }
+  .vld-overlay {
+    top: -300px;
+  }
   .header-title {
     display: flex;
     align-items: center;

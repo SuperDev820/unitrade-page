@@ -89,7 +89,7 @@ export default {
       <!--- Sidemenu -->
       <div id="sidebar-menu">
         <!-- Left Menu Start -->
-        <ul class="list-unstyled" id="side-menu">
+        <ul class="metismenu list-unstyled" id="side-menu">
 
           <li>
             <router-link tag="a" to="/overview" class="side-nav-link">
@@ -99,8 +99,8 @@ export default {
           </li>
 
           <li>
-            <a href="javascript: void(0);" class="toggle-search" @click="toggleSearchbar">
-              <i class="ti-search"></i>
+            <a href="javascript: void(0);" class="side-nav-link">
+              <i class="ti-search toggle-search" @click="toggleSearchbar"></i>
               <span>Search</span>
             </a>
           </li>
