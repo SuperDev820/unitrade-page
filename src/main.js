@@ -11,6 +11,8 @@ import store from './store'
 import vco from "v-click-outside"
 import "@/design/index.scss";
 import Sparkline from 'vue-sparklines';
+import vSelect from "vue-select";
+import "vue-select/dist/vue-select.css";
 
 Vue.use(BootstrapVue);
 
@@ -29,6 +31,7 @@ Vue.use(VueGoogleMaps, {
   },
   installComponents: true
 })
+Vue.component("v-select", vSelect)
 Vue.component('apexchart', VueApexCharts)
 
 new Vue({
