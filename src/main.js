@@ -13,8 +13,10 @@ import "@/design/index.scss";
 import Sparkline from 'vue-sparklines';
 import vSelect from "vue-select";
 import "vue-select/dist/vue-select.css";
+import TruncateVue from 'truncate-vue';
 
 Vue.use(BootstrapVue);
+Vue.use(TruncateVue)
 
 Vue.config.productionTip = false
 

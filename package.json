@@ -27,6 +27,7 @@
     "firebase": "^7.6.2",
     "metismenujs": "^1.1.0",
     "simplebar-vue": "^1.4.0",
+    "truncate-vue": "0.0.2",
     "v-click-outside": "^3.0.0",
     "v-mask": "^2.0.2",
     "vee-validate": "^3.2.1",

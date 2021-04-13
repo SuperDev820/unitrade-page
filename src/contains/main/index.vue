@@ -49,7 +49,12 @@
         isConnectedWallet: true,
         pageIndex: 1,
         token_filter_by: '',
-        filtered_tokenItems: [],
+        filtered_tokenItems: [{
+          'name': 'ETH',
+          'description': 'Ethereum',
+          'liquidity': 30502411.56345345345345345,
+        },
+        ],
         isActiveLimit: true,
         isActiveMarket: false,
         usd_amount: '0.0000',
@@ -630,10 +635,11 @@
               height="35"
               alt="token image"
             ></b-img>
-            <span class="pl-3">{{ tokenItem.description }}({{ tokenItem.name }})</span>
+            <!-- <span class="pl-3">{{ tokenItem.description | truncate(10) }}({{ tokenItem.name }})</span> -->
+            <span class="pl-3">{{ tokenItem.description.slice(0, 5) }}({{ tokenItem.name }})</span>
           </div>
           <div>
-            <span>${{ tokenItem.liquidity }}</span>
+            <span>${{ parseFloat(tokenItem.liquidity).toFixed(2) }}</span>
           </div>
         </li>
       </ul>

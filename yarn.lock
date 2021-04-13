@@ -8792,6 +8792,11 @@ trim-newlines@^1.0.0:
   dependencies:
     glob "^7.1.2"
 
+truncate-vue@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/truncate-vue/-/truncate-vue-0.0.2.tgz#8b491632754af2efcf4036e43b882f9bf4312cee"
+  integrity sha512-OzOhRAS9D/MwXtPOojYsRmq6DHeSc4i3CSXqMtwIaq0C/tFZxS+kAbP4vB2krZ3SzdF7R5kCdxvlFmv5wJ9Wkg==
+
 tryer@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/tryer/-/tryer-1.0.1.tgz#f2c85406800b9b0f74c9f7465b81eaad241252f8"
