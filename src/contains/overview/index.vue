@@ -51,10 +51,6 @@
       }
     },
     mounted() {
-      this.isLoading = true;
-      setTimeout(() => {
-        this.isLoading = false
-      },2000)
       // Set the initial number of items
       this.totalRows = this.overviewTableRows.length;
       this.initTableRows();

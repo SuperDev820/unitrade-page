@@ -1,9 +1,12 @@
 const getters = {
-    recentPairs(state) {
-        return state.recent_pairs
+    recentTokenList(state) {
+        return state.recent_tokenList;
     },
-    trendingPairs(state) {
-        return state.trending_pairs
+    trendTokenList(state) {
+        return state.trend_tokenList;
+    },
+    foundTokenList(state) {
+        return state.found_tokenList;
     },
 };
 

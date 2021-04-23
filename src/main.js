@@ -11,9 +11,14 @@ import store from './store'
 import vco from "v-click-outside"
 import "@/design/index.scss";
 import Sparkline from 'vue-sparklines';
-import vSelect from "vue-select";
-import "vue-select/dist/vue-select.css";
+import { apolloProvider } from './graphql/apollo'
 import TruncateVue from 'truncate-vue';
+// import VueToastr2 from 'vue-toastr-2'
+// import 'vue-toastr-2/dist/vue-toastr-2.min.css'
+
+// window.toastr = require('toastr')
+
+// Vue.use(VueToastr2)
 
 Vue.use(BootstrapVue);
 Vue.use(TruncateVue)
@@ -33,11 +38,11 @@ Vue.use(VueGoogleMaps, {
   },
   installComponents: true
 })
-Vue.component("v-select", vSelect)
 Vue.component('apexchart', VueApexCharts)
 
 new Vue({
   router,
   store,
+  apolloProvider,
   render: h => h(App),
 }).$mount('#app')

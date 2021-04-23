@@ -1,13 +1,24 @@
 const getters = {
-    currentToken(state) {
-        return state.current_token
+    currentToken0(state) {
+        return state.current_token0
     },
-    currentPair(state) {
-        return state.current_pair
+    currentToken1(state) {
+        return state.current_token1
     },
-    tokenItems(state) {
-        return state.token_items
+    currentMode(state) {
+        return state.mode
     },
+    
+    pairTokenList(state) {
+        return state.pair_tokenList;
+    },
+    ethPrice(state) {
+        return state.eth_price;
+    },
+    gasFeeOptions(state) {
+        return state.gasfee_options;
+    },
+
 };
 
 export default getters;

@@ -1,10 +1,17 @@
-
 import type from './type'
+// import axios from "axios";
 
 const actions = {
-    setRecentPairs(context, data) {
-        // console.log(token)
-        context.commit(type.SET_RECENT_PAIRS, data);
+    setTrendTokens(context, data) {
+        context.commit(type.SET_TREND_TOKENS, data);
+    },
+    
+    setRecentTokens(context, data) {
+        context.commit(type.SET_RECENT_TOKENS, data);
+    },
+    
+    setFoundTokens(context, data) {
+        context.commit(type.SET_FOUND_TOKENS, data);
     },
 };
 
